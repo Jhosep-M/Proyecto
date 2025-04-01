@@ -11,6 +11,7 @@ import { AboutComponent } from './pages/about/about.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { AuthService } from './auth/auth.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +24,8 @@ import { AuthService } from './auth/auth.service';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    AuthModule
+    AuthModule,
+    
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
