@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { CarritoService } from '../../services/carrito.service';
 @Component({
   selector: 'app-inicio',
   standalone: false,
@@ -25,7 +25,14 @@ export class InicioComponent {
       descripcion: 'Auriculares con cancelación de ruido.',
       precio: 150,
       imagen: 'public/Auriculares.jpg'
-    }
+    },
+    
   ];
+  constructor(private carritoService: CarritoService) {}
+
+  agregarAlCarrito(producto: any) {
+    this.carritoService.agregarProducto(producto);
+    alert(`${producto.nombre} agregado al carrito`);
+  }
 
 }

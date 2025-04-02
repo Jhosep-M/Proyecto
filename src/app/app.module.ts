@@ -7,27 +7,29 @@ import { AppComponent } from './app.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AuthModule } from './auth/auth.module';
 import { InicioComponent } from './pages/inicio/inicio.component';
-import { AboutComponent } from './pages/about/about.component';
+
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { AuthService } from './auth/auth.service';
+
+import { CarritoService } from './services/carrito.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     InicioComponent,
-    AboutComponent,
     NavbarComponent,
     FooterComponent,
+  
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    AuthModule,
+    AuthModule
     
   ],
-  providers: [AuthService],
+  providers: [AuthService,CarritoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

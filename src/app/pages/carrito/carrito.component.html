@@ -1,0 +1,48 @@
+<div class="container mt-4">
+    <h2 class="text-center">Carrito de Compras</h2>
+    <div class="row">
+      <!-- Tabla de productos -->
+      <div class="col-md-8">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Imagen</th>
+              <th>Nombre</th>
+              <th>Descripción</th>
+              <th>Precio</th>
+              <th>Cantidad</th>
+              <th>Acción</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let producto of carrito">
+              <td><img [src]="producto.imagen" alt="{{ producto.nombre }}" width="50"></td>
+              <td>{{ producto.nombre }}</td>
+              <td>{{ producto.descripcion }}</td>
+              <td>{{ producto.precio | currency }}</td>
+              <td>
+                <button class="btn btn-sm btn-secondary" (click)="disminuirCantidad(producto)">-</button>
+                {{ producto.cantidad }}
+                <button class="btn btn-sm btn-secondary" (click)="aumentarCantidad(producto)">+</button>
+              </td>
+              <td>
+                <button class="btn btn-danger btn-sm" (click)="eliminarProducto(producto.nombre)">Eliminar</button>
+              </td>
+        
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Resumen de compra -->
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">Resumen de Compra</h4>
+            <p><strong>Total: </strong> {{ totalCompra | currency }}</p>
+            <button class="btn btn-success btn-block">Finalizar Compra</button>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
