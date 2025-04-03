@@ -6,7 +6,7 @@ import { AuthService } from '../auth.service';
   selector: 'app-register',
   standalone: false,
   templateUrl: './register.component.html',
-  styleUrl: './register.component.css'
+  styleUrls: ['./register.component.css']
 })
 export class RegisterComponent {
   registerForm: FormGroup;
@@ -25,9 +25,17 @@ export class RegisterComponent {
   onRegister() {
     if (this.registerForm.valid) {
       const { email, password } = this.registerForm.value;
+      
+      let users = JSON.parse(localStorage.getItem('users') || '[]');
+      
+      if (users.some((user: any) => user.email === email)) {
+        alert('El usuario ya está registrado');
+        return;
+      }
+  
       this.authService.register(email, password);
       alert('Registro exitoso, ahora puedes iniciar sesión');
-      this.router.navigate(['/login']); // ✅ Redirige al login después de registrarse
+      this.router.navigate(['/login']);
     }
     
   }

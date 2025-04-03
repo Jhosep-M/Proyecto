@@ -5,7 +5,7 @@ import { AuthService } from '../auth/auth.service';
 @Injectable({
   providedIn: 'root'
 })
-export class AuthGuard implements CanActivate {
+export class AuthGuard implements CanActivate {//sirve para proteger las rutas si no esta registrado 
   constructor(private authService: AuthService, private router: Router) {}
 
   canActivate(): boolean {

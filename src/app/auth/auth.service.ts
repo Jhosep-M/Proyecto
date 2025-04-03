@@ -8,7 +8,7 @@ export class AuthService {
   register(email: string, password: string): void {
     let users = JSON.parse(localStorage.getItem('users') || '[]');
     users.push({ email, password });
-    localStorage.setItem('users', JSON.stringify(users)); // ✅ Guarda en localStorage
+    localStorage.setItem('users', JSON.stringify(users)); 
   }
 
   login(email: string, password: string): boolean {

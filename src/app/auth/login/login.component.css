@@ -30,25 +30,7 @@ input {
   border-radius: 5px;
 }
 
-/* Contenedor de la contraseña con icono */
-.password-container {
-  display: flex;
-  align-items: center;
-  position: relative;
-}
 
-.password-container input {
-  flex: 1;
-  padding-right: 30px;
-}
-
-.toggle-password {
-  position: absolute;
-  right: 10px;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
 
 /* Botones */
 button {
@@ -84,4 +66,4 @@ p button {
 .error {
   color: red;
   font-size: 12px;
-}
+}                  
